@@ -80,7 +80,7 @@ class Record_model extends CI_Model {
                 ],
                 [
                     'name' => 'attachment',
-                    'contents' => $files
+                    'contents' => $this->input->post('files')
                 ]
             ]
         ]);

@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // TODO: Sesuaikan dengan base url front-end yang digunakan
-$config['base_url'] = 'frontend-dot-submission-mgce-yudaduy22.et.r.appspot.com';
+$config['base_url'] = 'https://frontend-dot-submission-mgce-yudaduy22.et.r.appspot.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ $config['base_url'] = 'frontend-dot-submission-mgce-yudaduy22.et.r.appspot.com';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
