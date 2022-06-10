@@ -93,15 +93,15 @@ router.post("/insertrecord", multer.single('attachment'), imgUpload.uploadToGcs,
     const amount = req.body.amount
     const date = req.body.date
     const notes = req.body.notes
-    var imageUrl = ''
+    var attachment = ''
 
     if (req.file && req.file.cloudStoragePublicUrl) {
-        imageUrl = req.file.cloudStoragePublicUrl
+        attachment = req.file.cloudStoragePublicUrl
     }
 
     const query = "INSERT INTO records (name, amount, date, notes, attachment) values (?, ?, ?, ?, ?)"
 
-    connection.query(query, [name, amount, date, notes, imageUrl], (err, rows, fields) => {
+    connection.query(query, [name, amount, date, notes, attachment], (err, rows, fields) => {
         if (err) {
             res.status(500).send({message: err.sqlMessage})
         } else {
@@ -116,15 +116,15 @@ router.put("/editrecord/:id", multer.single('attachment'), imgUpload.uploadToGcs
     const amount = req.body.amount
     const date = req.body.date
     const notes = req.body.notes
-    var imageUrl = ''
+    var attachment = ''
 
     if (req.file && req.file.cloudStoragePublicUrl) {
-        imageUrl = req.file.cloudStoragePublicUrl
+        attachment = req.file.cloudStoragePublicUrl
     }
 
     const query = "UPDATE records SET name = ?, amount = ?, date = ?, notes = ?, attachment = ? WHERE id = ?"
     
-    connection.query(query, [name, amount, date, notes, imageUrl, id], (err, rows, fields) => {
+    connection.query(query, [name, amount, date, notes, attachment, id], (err, rows, fields) => {
         if (err) {
             res.status(500).send({message: err.sqlMessage})
         } else {
