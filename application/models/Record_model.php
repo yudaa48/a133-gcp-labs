@@ -55,7 +55,7 @@ class Record_model extends CI_Model {
             $amount = $amount * -1;
         }
 
-        $files;
+        $files = $this->input->post('files');
         if ($_FILES['attachment']['tmp_name'] !== "") {
             $files = fopen($_FILES['attachment']['tmp_name'], 'r');
         }
@@ -80,7 +80,7 @@ class Record_model extends CI_Model {
                 ],
                 [
                     'name' => 'attachment',
-                    'contents' => $this->input->post('files')
+                    'contents' => $files
                 ]
             ]
         ]);
@@ -97,7 +97,7 @@ class Record_model extends CI_Model {
             $amount = $amount * -1;
         }
 
-        $files;
+        $files = $this->input->post('files');
         if ($_FILES['attachment']['tmp_name'] !== "") {
             $files = fopen($_FILES['attachment']['tmp_name'], 'r');
         }
